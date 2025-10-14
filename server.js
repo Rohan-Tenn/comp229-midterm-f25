@@ -80,9 +80,6 @@ app.get('/api/games/filter', (req, res) => {
   {
     return res.status(400).json({ message: "Genre not Found"});
   }
-
- 
-
   const gamesMatch = games.filter(listOfGames => listOfGames.genre === gameGenre);
 
   res.status(200).json(gamesMatch);
@@ -111,7 +108,6 @@ app.get('/api/games/:id', (req, res) => {
 // Task: Implement logic to add a new game to the array
 app.post('/api/games', (req, res) => {
 
-   
     const addGame = req.body;
 
     function gameCheck(game)
@@ -126,7 +122,6 @@ app.post('/api/games', (req, res) => {
 
       games.push(addGame);
       res.status(201).json(addGame);
-  
 });
 
 // PUT /api/games/:id
@@ -164,7 +159,7 @@ app.put('/api/games/:id', (req, res) => {
 // Description: Remove a game by ID
 // Task: Implement logic to remove a game by its index (ID)
 app.delete('/api/games/:id', (req, res) => {
-  
+  //Got stuck on this one
   res.status(501).send('Not Implemented');
 });
 
